@@ -1,0 +1,82 @@
+.rounded (@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.multiRounded(@tl:5px,@tr:5px,@bl:5px,@br:5px){
+	-webkit-border-top-left-radius: @tl;
+	-webkit-border-top-right-radius: @tr;
+	-webkit-border-bottom-right-radius: @br;
+	-webkit-border-bottom-left-radius: @bl;
+	-moz-border-radius-topleft: @tl;
+	-moz-border-radius-topright: @tr;
+	-moz-border-radius-bottomright: @br;
+	-moz-border-radius-bottomleft: @bl;
+	border-top-left-radius: @tl;
+	border-top-right-radius: @tr;
+	border-bottom-right-radius: @br;
+	border-bottom-left-radius: @bl;
+	border-radius: @tl @tr @br @bl;
+}
+
+.inset(@color: #fff){
+	text-shadow: 0px 1px 1px @color;
+}
+
+.transition(@props:opacity,@duration:0.5s,@timingFunction: ease-out){
+	-webkit-transition-property:@props;
+	-webkit-transition-duration: @duration;
+	transition-timing-function: @timingFunction;
+}
+
+
+.box-shadow(@offsetx:0px, @offsety:2px, @blur:2px, @color:rgba(0,0,0,0.2)){
+	-webkit-box-shadow: @offsetx @offsety @blur @color;
+	-moz-box-shadow: @offsetx @offsety @blur @color;
+	box-shadow: @offsetx @offsety @blur @color;
+}
+
+.inset-shadow(@offsetx:0px, @offsety:2px, @blur:2px, @color:rgba(0,0,0,0.2)){
+	-webkit-box-shadow: inset @offsetx @offsety @blur @color;
+	-moz-box-shadow: inset @offsetx @offsety @blur @color;
+	box-shadow: inset @offsetx @offsety @blur @color;
+}
+
+
+.no-box-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.inset-shadow(@offsetx:0px, @offsety:1px, @blur:2px, @color:rgba(0,0,0,0.3)){
+	-webkit-box-shadow: inset @offsetx @offsety @blur @color;
+	-moz-box-shadow: inset @offsetx @offsety @blur @color;
+}	
+
+
+.multiColumn(@count:2, @gutter:20px){
+	-moz-column-count: @count;
+	-moz-column-gap: @gutter;
+	-webkit-column-count: @count;
+	-webkit-column-gap: @gutter;
+	column-count: @count;
+	column-gap: @gutter;	
+} 
+
+.v-grad(@color_a:#fff,@color_b:#000,@stop:100%){
+	background: -webkit-gradient(linear, 0% 0%, 0% @stop, from(@color_a), to(@color_b)) repeat-x;
+	background: -moz-linear-gradient(top, @color_a 0%, @color_b @stop); /* firefox */
+}
+
+.gloss(@color1: rgba(255,255,255,0.2),@color2:rgba(255,255,255,0.1)){
+	background-image: -moz-linear-gradient(top, @color1 0%, @color2 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%); /* firefox */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(50%,@color2), color-stop(50%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0))); /* webkit */
+}
+
+
+.debug {
+	outline: 1px solid rgba(255,0,0,0.5);
+	background-color: rgba(0,0,0,0.03);
+}

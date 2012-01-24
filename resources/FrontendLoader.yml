@@ -1,0 +1,25 @@
+
+app_name: "my_app"
+
+javascript:
+    framework: "mootools"
+    directory: "."
+    compress: false
+    prioritize:
+      - 'mootools.js'
+    ignore: 
+      -'js.js'
+
+
+css:
+    framework: "less"
+    directory: "."
+    prioritize: ""
+    ignore: 
+
+      
+templates:
+    format: "mustache"
+    varname: "templates"
+    directory: "."
+    ignore: 

@@ -1,0 +1,20 @@
+# A sample Guardfile
+# More info at https://github.com/guard/guard#readme
+
+# Add files and commands to this file, like the example:
+#   watch(%r{file/path}) { `command(s)` }
+#
+
+ignore_paths 'js.js','templates.js', 'lfc.js'
+
+guard 'shell' do
+  watch(/(.*).js/) {|m| `fel compile` } 
+end
+
+guard 'shell' do
+  watch(/(.*).less/) {|m| `fel compile` }
+end
+
+guard 'shell' do
+  watch(/(.*).mustache/) {|m| `fel compile` }
+end

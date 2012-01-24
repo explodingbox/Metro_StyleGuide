@@ -1,0 +1,613 @@
+//Theme: Basic
+
+
+
+
+
+
+
+
+//Colours
+
+  @color_a: #E51400; //red
+  @color_b: #339933; //forest green
+  @color_c: #1BA1E2; //blue
+  @color_d: #F09609; //mustard
+  @color_e: #8CBF26; //grassy green
+  @color_f: #00ABA9; //aqua
+  @color_g: #FF0097; //hot pink
+  @color_h: #E671B8; //light pink
+  @color_i: #996600; //brown
+  @color_j: #A200FF; //purple
+  @color_k: #f89635; //orange
+  @black: #000;
+  @white: #fff;
+  @dark_grey: #212021;
+  @medium_grey: #999999;
+  @light_grey: #dedfde;
+  @darker_grey: #424242;
+  
+  @accent: @color_c;
+
+  .selected_text {
+  	background: #f2f2f2;
+  	color: #000;
+  }
+
+  ::selection 	   {.selected_text}
+  ::-moz-selection {.selected_text}
+
+  * {
+    -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+  }
+
+
+
+
+
+
+
+
+
+
+
+//Typography
+
+
+@import 'SegoeWP/stylesheet.css';
+
+body {
+  font-size: 90%;
+  font-family: 'Segoe WP','SegoeWP','Segue UI','Lucida Grande','sans';
+  line-height: 1.4;
+  font-weight: lighter;
+  color: @dark_grey;
+}
+
+.reversed {
+  background-color: @black;
+  color: #fff;
+}
+
+p {
+  margin: 0;
+  padding: 0 0 1em 0;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: @accent;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 350%;
+  margin: 0;
+  padding: 0.5em 0 0.25em 0;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 150%;
+  margin: 0;
+  padding: 0.5em 0 0.5em 0;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 125%;
+  margin: 0;
+  padding: 0.5em 0 0.5em 0;
+  font-weight: normal;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 1em 1.2em;
+}
+
+ol {
+  margin: 0;
+  padding: 0 0 1em 1.4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//Forms & UI
+
+input {
+  display: block;
+  border: 1px solid #aaa;
+  padding: 0.5em;
+  font-size: 100%;
+  margin-bottom: 1em;
+  width: 15em;
+}
+
+.reversed input {
+  background-color: @darker_grey;
+  border-color: transparent;
+  color: @white;
+}
+
+input.large {
+  width: 30em;
+}
+input.small {
+  width: 7em;
+}
+
+input:disabled {
+  opacity: 0.5;
+}
+
+label {
+  padding-bottom: 0.5em;
+  display: block;
+  clear: both;
+}
+
+.radioset, .checkboxset {
+  overflow: hidden;
+  padding-bottom: 1em;
+  label {
+    display: block;
+    padding: 0.2em 1em 0.2em 0;
+    line-height: 1;
+  }
+  input {
+    display: inline;
+    width: auto;
+    margin: 0 0.5em 0 0.2em;
+    padding: 0;
+  }
+}
+
+textarea {
+  display: block;
+  border: 1px solid #aaa;
+  font-size: 100%;
+  padding: 0.5em;
+  width: 30em;
+  max-width: 30em;
+  height: 10em;
+  margin-bottom: 1em;
+}
+
+.reversed textarea {
+  background-color: @darker_grey;
+  border-color: transparent;
+  color: @white;
+}
+
+select {
+  margin-bottom: 1em;
+  width: 16em;
+  font-size: 100%;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 2em 0;
+}
+
+.reversed hr {
+  border-top: 1px solid #aaa;
+}
+
+
+
+
+
+
+
+
+
+//Custom UI
+
+button {
+  background-color: @white;
+  border: 2px solid @accent;
+  color: @accent;
+  padding: 0.4em 0.8em 0.4em 0.8em;
+  font-size: 100%;
+  font-weight: bold;
+  display: inline-block;
+  text-transform: lowercase;
+}
+
+.reversed button {
+  background-color: @black;
+  border: 2px solid @white;
+  color: @white;
+}
+
+
+button.mousedown {
+  color: @white;
+  background-color: @accent;
+}
+
+.reversed button.mousedown {
+  background-color: @white;
+  color: @black;
+/*  .inset-shadow(0px,0px,0.2em,#000);*/
+}
+
+
+button:disabled {
+  font-weight: normal;
+  opacity: 0.5;
+}
+
+button.alt {
+  font-weight: normal;
+}
+
+button.l {
+  font-size: 150%;
+  font-weight: normal;
+}
+
+button.s {
+  font-size: 70%;
+  font-weight: normal;
+}
+
+.segmented_select {
+  overflow: hidden;
+  margin-bottom: 1em;
+  button {
+    margin: 0;
+    float: left;
+    .rounded(0);
+    border-left: none;
+    font-weight: normal;
+  }
+  button.first {
+    border-left: 2px solid @accent;
+/*    .multiRounded(0.5em,0,0.5em,0);*/
+    padding-left: 1em;
+  }
+  button.active {
+    color: @white;
+    background-color: @accent;
+/*    .inset-shadow;*/
+  }
+  button.last {
+/*    .multiRounded(0,0.5em,0,0.5em);*/
+    padding-right: 1em;
+  }
+}
+
+.reversed .segmented_select {
+  button.first {
+    border-left: 2px solid @white;
+  }
+  button.active {
+    background-color: @white;
+    color: @black;
+  }
+}
+
+.range_slider {
+  overflow: hidden;
+  position: relative;
+  width: 15em;
+  height: 1.2em;
+  margin-bottom: 1em;
+  .track {
+    height: 0.8em;
+    margin-top: 0.4em;
+    position: absolute;
+    left: 0em;
+    right: 0em;
+    overflow: hidden;
+    background-color: @light_grey;
+  }
+  .range_indicator {
+    height: 0.8em;
+    margin-top: 0.4em;
+    position: absolute;
+    left: 0em;
+    width: 2em;
+    background-color: @dark_grey;
+    z-index: 5;
+  }
+  .thumb {
+    width: 0.8em;
+    height: 0.8em;
+    background-color: @accent;
+    top: 0.4em;
+    left: 0;
+    position: absolute;
+    z-index: 10;
+  }
+}
+
+.reversed .range_slider {
+  .track {
+    background-color: #343434;
+  }
+  
+  .range_indicator {
+    background-color: @accent;
+  }
+  
+  .thumb {
+    background-color: @white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+//Tables
+
+table {
+  font-size: 85%;
+  width: 100%;
+  th {
+    padding: 0.5em 2%;
+    text-align: left;
+    border-bottom: 1px solid @black;
+  }
+  td {
+    padding: 0.5em 2%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+  }
+}
+
+.reversed table {
+  th {
+    border-bottom: 1px solid @white;
+  }
+  tr:nth-child(even) td {
+    background-color: #222;
+    border-bottom: none;
+  }
+  tr:nth-child(odd) td {
+    border-bottom: none;
+  }
+}
+
+
+table.sorting {
+  th {
+    color: #aaa;
+    font-weight: normal;
+    color: #aaa;
+  }
+  th.active {
+/*    font-weight: bold;*/
+    color: @black;
+  }
+  th.active:after {
+    font-size: 90%;
+    content: " ↓";
+  }
+}
+
+
+.reversed table.sorting {
+  th.active {
+    color: #fff;
+  }
+}
+
+table.nowrap {
+  td,th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+}
+
+
+//Navigation
+
+.tabset {
+  .nav {
+    padding: 0.2em 0 0 0;
+    overflow: hidden;
+    a {
+      border: 1px solid @accent;
+      border-bottom: 0;
+
+      padding: 0.5em 5% 0.2em 5%;
+      text-decoration: none;
+      color: @accent;
+      float: left;
+      height: 1.5em;
+      margin-right: -1px;
+      cursor: default;
+    }
+    a.active {
+      background-color: @accent;
+      color: @white;
+    }
+    border-bottom: 1px solid @accent;
+  }
+  .section {
+    display: none;
+    clear: both;
+  }
+  .section.active {
+    display:block;
+  }
+}
+
+.reversed .tabset {
+  .nav {
+    border-color: @white;
+    a {
+      color: @white;
+      border-color: @white;
+    }
+    a.active {
+      background-color: @white;
+      color: @black;
+    }
+  }
+  
+}
+
+
+.tabset.pill {
+  .nav {
+    border: none;
+    padding: 0.5em 0;
+    a {
+      border: none;
+      margin: 0;
+      padding: 0.3em 2% 0em 2%;
+      font-size: 100%;
+      padding-left: 0;
+      color: @black;
+    }
+    a.active {
+      background-color: @white;
+      color: @accent;
+    }
+  }  
+}
+
+.reversed .tabset.pill {
+  .nav {
+    a {
+      color: @medium_grey;
+    }
+    a.active {
+      background-color: transparent;
+      color: @white;
+    }
+  }
+  
+}
+
+
+.pagination {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid @light_grey;
+    overflow: hidden;
+    li {
+      float: left;
+      a {
+        display: block;
+        padding: 0.2em 0.8em;
+        border: 1px solid @light_grey;
+        border-left: none;
+        text-decoration: none;
+        font-size: 80%;
+        color: @black;
+      }
+      a.active {
+        color: @white;
+        background-color: @accent;
+      }
+    }  
+  } 
+}
+
+.reversed .pagination {
+  ul {
+    border-left: 1px solid #333;
+    li {
+      a {
+        color: @white;
+        border: 1px solid #333;
+        border-left: none;
+      }
+    }
+  }
+  
+}
+
+
+
+
+
+
+
+
+//Messaging
+
+.blockmessage {
+  border: 1px solid #eee;
+  margin-bottom: 1em;
+  overflow: hidden;
+  font-size: 90%;
+  background-color: #fefefe;
+  .title {
+   padding: 0.7em 1em; 
+   font-weight: bold;
+  }
+  .body {
+    padding: 0em 1em 1em 1em;
+  }
+  .actions {
+    overflow: hidden;
+    float: right;
+    padding: 0.5em;
+    button {
+      float: right;
+    }
+  }
+}
+
+.blockmessage.error {
+  background-color: #FCE8E8;
+  border: 1px solid #C00;
+}
+
+.blockmessage.warning {
+  background-color: #FEFDED;
+  border: 1px solid #FAC500;
+}
+
+.reversed {
+  
+  .blockmessage {
+    background-color: #222;
+  }
+  
+  .blockmessage.error {
+    background-color: #251717;
+  }
+  
+}
+
+

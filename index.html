@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Style Guide</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Exploding Box Productions">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="resources/style.css?v=1"> 
+  <script type="text/javascript" src="resources/js.js"></script> 
+  <script type="text/javascript">
+    initStyleGuide = (function(){  
+      $$('button').each(function(el){
+        new Button(el);
+      });
+      $$('.tabset').each(function(el){
+        new Tabset(el);
+      });
+      $$('select.segmented').each(function(el){
+        new SegmentedSelect(el);
+      });
+      $$('input[type=range]').each(function(el){
+        new RangeSlider(el);
+      });
+      var cs = $('sel_color_scheme');
+      cs.addEvent('change', function(e,el){
+        document.body.set('class',cs.get('value'));
+      });
+      window.addEvent('keydown', function(e){
+        if (e.key == 'down') {
+          e.preventDefault();
+          e.stopPropagation();
+          document.body.toggleClass("reversed");
+        }
+      })
+    });
+    window.addEvent('domready',initStyleGuide);
+  </script> 
+  <style type="text/css" media="screen">
+    body {
+      padding: 3em;
+    }
+  </style>
+
+</head>
+  <body class="">
+    <div id="swatches">
+      <div class="swatch color_a"></div>
+      <div class="swatch color_b"></div>
+      <div class="swatch color_c"></div>
+      <div class="swatch color_d"></div>
+      <div class="swatch color_e"></div>
+      <div class="swatch color_f"></div>
+      <div class="swatch color_g"></div>
+      <div class="swatch color_h"></div>
+      <div class="swatch color_i"></div>
+      <div class="swatch color_j"></div>
+      <select id="sel_color_scheme" class="segmented">
+        <option>standard</option>
+        <option>reversed</option>
+      </select>
+    </div>
+    <div id="typography">
+      <h1>Typography(h1)</h1>
+      <p>
+        Dolenduciatur mod ut ad maximi, quis nam, <strong>strong</strong> volent iducienihit ipit 
+        <em>emphasised</em> nonest, veliqua <em><strong>emph strong</strong></em> pore dollest, culparum 
+        velesti busamus cipsani 
+      </p>
+      <p>
+        <small>Small text, very common</small>
+      </p>
+      <h2>Heading 2</h2>
+      <p>
+        <a href="#">Hillorae niminis autem</a> niscius andestio volupta tatesto tem raecae nonsequam 
+        velessuntis nonem. Et elessed quia venim et et dollore magnatin re eosapienti 
+      </p>
+      <h3>Heading 3</h3>
+      <p>Dolorehene volorrum quo eossi autatis sequat facerro enda comnissit essumet, et essinto dolo 
+        comnimus que dolor si ute vel incius dolutem ossinti quis ut 
+      </p>
+      <h3>Heading 3</h3>
+      <p>
+        Aliqui debissi nihilla boreprae nulpari onsequos re nonseque paruptatio mo expelictur, idebiti 
+        undusdam, ium apid et est, voluptatqui nis undam quias rest.
+      </p>
+      <p>
+        Apelenis poritius iscienem. Itatio beribus et ra volut recumque volescient, idis dolendam, net 
+        invelic ienimi, quiam, illupta sperfer ioreste ctempor 
+      </p>
+      <h3>Lists</h3>
+      <ul>
+        <li>Dolenduciatur mod ut ad maximi</li>
+        <li>Hillorae niminis autem niscius</li>
+        <li>Aliqui debissi nihilla boreprae</li>
+      </ul>
+      <ol>
+        <li>Dolenduciatur mod ut ad maximi</li>
+        <li>Hillorae niminis autem niscius</li>
+        <li>Aliqui debissi nihilla boreprae</li>
+        <li>Aliqui debissi nihilla boreprae</li>
+        <li>Aliqui debissi nihilla boreprae</li>
+        <li>Aliqui debissi nihilla boreprae</li>
+        <li>Aliqui debissi nihilla boreprae</li>
+        <li>Aliqui debissi nihilla boreprae</li>
+        <li>Aliqui debissi nihilla boreprae</li>
+        <li>Aliqui debissi nihilla boreprae</li>
+      </ol>
+      <h2>Heading 2</h2>
+      <p>
+        Poresecae por aut aut experum volorporrum si dolo et reptati strumqu iandebit ut prem quo 
+        tescil molo cus, nitia quas eaqui quis unt.
+      </p>
+    </div>
+    <hr>
+    <div id="forms">
+      <h1>Forms &amp; UI</h1>
+      <h2>Standard UI</h2>
+      <label>Label</label>
+      <input placeholder="text">
+      <input class="large" placeholder="large input">
+      <input class="small" placeholder="small input">
+      <input placeholder="disabled" disabled>
+      <input type="email" name="" value="" placeholder="email">
+      <input type="number" name="" value="0">
+      <input type="tel" name="" placeholder="tel">
+      <div class="radioset">
+        <label><input type="radio" name="radio"value="0">Radio 0</label>
+        <label><input type="radio" name="radio"value="0">Radio 1</label>
+        <label><input type="radio" name="radio"value="0">Radio 2</label>
+      </div>
+      <div class="checkboxset">
+        <label><input type="checkbox" name="check_0" value="0">Check 0</label>
+        <label><input type="checkbox" name="check_1" value="1">Check 1</label>
+        <label><input type="checkbox" name="check_2" value="2">Check 2</label>
+      </div>
+      <select name="select">
+        <option>Select</option>
+        <option>Select 1</option>
+        <option>Select 2</option>
+      </select>
+      <textarea placeholder="Textarea"></textarea>
+      <button>Button</button>
+      <button class="alt">Alt Button</button>
+      <button class="l">Large Button</button>
+      <button class="s">Small Button</button>
+      <button class="d" disabled>Disabled Button</button>
+      <h2>Custom UI</h2>
+      <label>Segmented Select</label>
+      <select class="segmented">
+        <option>Any</option>
+        <option>Some</option>
+        <option>All</option>
+      </select>
+      <label>Slider Control</label>
+      <input name="sldr"  min="0" max="100" value="50" type="range">
+      <label>Tags, (Comma seperated)</label>
+      <input type="text" class="taglist" placeholder="Tags (comma seperated)">
+    </div>
+    <hr>
+    <div id="tables">
+      <h1>Tables</h1>
+      <table cellspacing="0" class="sorting nowrap">
+        <thead>
+          <tr>
+            <th class="active">Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+            <th>Column 4</th>
+            <th>Column 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Field 1</td>
+            <td>Field 2</td>
+            <td>Field 3</td>
+            <td>Field 4</td>
+            <td>Field 5</td>
+          </tr>
+          <tr>
+            <td>Field 1</td>
+            <td>Field 2</td>
+            <td>Field 3</td>
+            <td>Field 4</td>
+            <td>Field 5</td>
+          </tr>
+          <tr>
+            <td>Field 1</td>
+            <td>Field 2</td>
+            <td>Field 3</td>
+            <td>Field 4</td>
+            <td>Field 5</td>
+          </tr>
+          <tr>
+            <td>Field 1</td>
+            <td>Field 2</td>
+            <td>Field 3</td>
+            <td>Field 4</td>
+            <td>Field 5</td>
+          </tr>
+          <tr>
+            <td>Field 1</td>
+            <td>Field 2</td>
+            <td>Field 3</td>
+            <td>Field 4</td>
+            <td>Field 5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <div id="navigation">
+      <h1>Navigation</h1>
+      <h2>Tabs</h2>
+      <div class="tabset">
+        <div class="nav">
+          <a href="#one">One</a>
+          <a href="#two">Two</a>
+          <a href="#three">Three</a>
+        </div>
+        <div class="sections">
+          <div class="section">
+            <h3>Section 1</h3>
+            <p>Aliqui debissi nihilla boreprae nulpari onsequos</p>
+            <p>Apelenis poritius iscienem. Itatio beribus et ra</p>
+          </div>
+          <div class="section">
+            <h3>Section 2</h3>
+            <p>Aliqui debissi nihilla boreprae nulpari onsequos</p>
+            <p>Apelenis poritius iscienem. Itatio beribus et ra</p>
+          </div>
+          <div class="section">
+            <h3>Section 3</h3>
+            <p>Aliqui debissi nihilla boreprae nulpari onsequos</p>
+            <p>Apelenis poritius iscienem. Itatio beribus et ra</p>
+          </div>
+        </div>
+      </div>
+      <h2>Pills</h2>
+      <div class="pill tabset">
+        <div class="nav">
+          <a href="#one">One</a>
+          <a href="#two">Two</a>
+          <a href="#three">Three</a>
+        </div>
+        <div class="sections">
+          <div class="section">
+            <h3>Section 1</h3>
+            <p>Aliqui debissi nihilla boreprae nulpari onsequos</p>
+            <p>Apelenis poritius iscienem. Itatio beribus et ra</p>
+          </div>
+          <div class="section">
+            <h3>Section 2</h3>
+            <p>Aliqui debissi nihilla boreprae nulpari onsequos</p>
+            <p>Apelenis poritius iscienem. Itatio beribus et ra</p>
+          </div>
+          <div class="section">
+            <h3>Section 3</h3>
+            <p>Aliqui debissi nihilla boreprae nulpari onsequos</p>
+            <p>Apelenis poritius iscienem. Itatio beribus et ra</p>
+          </div>
+        </div>
+      </div>
+      <h2>Pagination</h2>
+      <div class="pagination">
+        <ul>
+          <li><a class="prev disabled" href="#">&larr; Previous</a></li>
+          <li><a class="active" href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a class="next" href="#">Next &rarr;</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div id="messaging">
+      <h1>Messaging</h1>
+      <div class="blockmessage">
+        <div class="title">
+          Message Title
+        </div>
+        <div class="body">
+          Message Body
+        </div>
+        <div class="actions">
+          <button>Action 1</button>
+          <button class="alt">Action 2</button>
+          <button class="alt">Action 3</button>
+        </div>
+      </div>
+      <div class="blockmessage warning">
+        <div class="title">
+          Message Title
+        </div>
+        <div class="body">
+          Message Body
+        </div>
+        <div class="actions">
+          <button>Action 1</button>
+          <button class="alt">Action 2</button>
+          <button class="alt">Action 3</button>
+        </div>
+      </div>
+      <div class="blockmessage error">
+        <div class="title">
+          Message Title
+        </div>
+        <div class="body">
+          Message Body
+        </div>
+        <div class="actions">
+          <button>Action 1</button>
+          <button class="alt">Action 2</button>
+          <button class="alt">Action 3</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
